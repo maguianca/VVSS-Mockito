@@ -33,7 +33,7 @@ public class StocServiceStep2VTest {
 
     @Test
     void testAddStoc_IntegrationV_Success() {
-        // Arrange - Deoarece V este real, trebuie să setăm mock-ul E să returneze date valide
+
         when(mockStoc.getId()).thenReturn(1);
         when(mockStoc.getIngredient()).thenReturn("Apa");
         when(mockStoc.getCantitate()).thenReturn((double)10);
@@ -50,7 +50,6 @@ public class StocServiceStep2VTest {
 
     @Test
     void testAddStoc_IntegrationV_Fail() {
-        // Arrange - Setăm mock-ul E să returneze un ID invalid
         when(mockStoc.getId()).thenReturn(-1);
 
         // Act & Assert - V real va prinde eroarea și va arunca excepție

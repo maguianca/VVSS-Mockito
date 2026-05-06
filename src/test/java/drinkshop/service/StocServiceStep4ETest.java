@@ -27,7 +27,6 @@ public class StocServiceStep4ETest {
             e.printStackTrace();
         }
 
-        // Step 4: Integrare totală. S, V, R și E sunt clase reale (nicio clasă mock-uită).
         stocRepo = new FileStocRepository(testFileName);
         stocValidator = new StocValidator();
         stocService = new StocService(stocRepo, stocValidator);
@@ -40,7 +39,6 @@ public class StocServiceStep4ETest {
 
     @Test
     void testAddStoc_IntegrationE_Success() {
-        // Arrange - Entitate reală E
         Stoc stoc = new Stoc(1, "Apa", 10, 2);
 
         // Act
@@ -53,7 +51,6 @@ public class StocServiceStep4ETest {
 
     @Test
     void testAddStoc_IntegrationE_Fail() {
-        // Arrange - Entitate reală E cu date nevalide (ID invalid)
         Stoc stoc = new Stoc(-1, "Apa", 10, 2);
 
         // Act & Assert

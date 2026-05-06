@@ -29,14 +29,11 @@ public class StocServiceStep3RTest {
 
     @BeforeEach
     void setUp() {
-        // Creăm un fișier gol pentru Repository-ul real
         try {
             new File(testFileName).createNewFile();
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-        // Integrare cu R real. S și V sunt reale. E este mock.
         stocRepo = new FileStocRepository(testFileName); 
         stocValidator = new StocValidator(); 
         stocService = new StocService(stocRepo, stocValidator); 
@@ -44,14 +41,11 @@ public class StocServiceStep3RTest {
 
     @AfterEach
     void tearDown() {
-        // Curățăm fișierul după teste
         new File(testFileName).delete();
     }
 
     @Test
     void testAddStoc_IntegrationR_Success() {
-        // Arrange - Setează mock-ul să returneze valori valide
-        // Aceste valori sunt apelate și de V, dar și de R când face salvarea în fișier (extractEntity)
         when(mockStoc.getId()).thenReturn(1);
         when(mockStoc.getIngredient()).thenReturn("Apa");
         when(mockStoc.getCantitate()).thenReturn((double)10);
