@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: drinkshop.it.service.td.breadthfirst.StocServiceLevel1RepoIntTest
+-------------------------------------------------------------------------------
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 5, Time elapsed: 2.641 s -- in drinkshop.it.service.td.breadthfirst.StocServiceLevel1RepoIntTest

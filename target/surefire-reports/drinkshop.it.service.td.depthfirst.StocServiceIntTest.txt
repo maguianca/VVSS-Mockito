@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: drinkshop.it.service.td.depthfirst.StocServiceIntTest
+-------------------------------------------------------------------------------
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 5, Time elapsed: 0.041 s -- in drinkshop.it.service.td.depthfirst.StocServiceIntTest

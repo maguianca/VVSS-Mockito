@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="drinkshop.service.StocServiceTest" time="0.116" tests="2" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="drinkshop.service.ProductServiceTest" time="0.747" tests="15" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="23"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -59,6 +59,19 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="67.0"/>
   </properties>
-  <testcase name="testAddStoc_ValidationFails" classname="drinkshop.service.StocServiceTest" time="0.103"/>
-  <testcase name="testAddStoc_Success" classname="drinkshop.service.StocServiceTest" time="0.005"/>
+  <testcase name="addProduct_ValidCases_ShouldSave(String, double)[1]" classname="drinkshop.service.ProductServiceTest" time="0.216"/>
+  <testcase name="addProduct_ValidCases_ShouldSave(String, double)[2]" classname="drinkshop.service.ProductServiceTest" time="0.025"/>
+  <testcase name="addProduct_ValidCases_ShouldSave(String, double)[3]" classname="drinkshop.service.ProductServiceTest" time="0.02"/>
+  <testcase name="addProduct_ValidCases_ShouldSave(String, double)[4]" classname="drinkshop.service.ProductServiceTest" time="0.017"/>
+  <testcase name="addProduct_InvalidCases_ShouldThrow(String, double, String)[1]" classname="drinkshop.service.ProductServiceTest" time="0.05"/>
+  <testcase name="addProduct_InvalidCases_ShouldThrow(String, double, String)[2]" classname="drinkshop.service.ProductServiceTest" time="0.01"/>
+  <testcase name="addProduct_InvalidCases_ShouldThrow(String, double, String)[3]" classname="drinkshop.service.ProductServiceTest" time="0.01"/>
+  <testcase name="addProduct_InvalidCases_ShouldThrow(String, double, String)[4]" classname="drinkshop.service.ProductServiceTest" time="0.007"/>
+  <testcase name="testCautaProduse_P01_NullInput" classname="drinkshop.service.ProductServiceTest" time="0.005"/>
+  <testcase name="testCautaProduse_P02_EmptyInput" classname="drinkshop.service.ProductServiceTest" time="0.009"/>
+  <testcase name="testCautaProduse_P03_EmptyList" classname="drinkshop.service.ProductServiceTest" time="0.005"/>
+  <testcase name="testCautaProduse_P04_NullProductNameInDb" classname="drinkshop.service.ProductServiceTest" time="0.014"/>
+  <testcase name="testCautaProduse_P05_NameNotMatching" classname="drinkshop.service.ProductServiceTest" time="0.021"/>
+  <testcase name="testCautaProduse_P06_PriceIsZero" classname="drinkshop.service.ProductServiceTest" time="0.019"/>
+  <testcase name="testCautaProduse_P07_ValidMatch" classname="drinkshop.service.ProductServiceTest" time="0.02"/>
 </testsuite>
