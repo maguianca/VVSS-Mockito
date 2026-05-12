@@ -1,0 +1,160 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><title>testspec Proiect234 - miir3562_IntT</title>
+<link type="text/css" rel="stylesheet" href="https://www.scs.ubbcluj.ro/testlink/gui/themes/default/css/tl_documents.css" />
+<style type="text/css" media="print">.notprintable { display:none;}</style>
+</head>
+<body>
+<div>
+<div style="float:right;">TestLink Community [configure $tlCfg-&gt;document_generator-&gt;company_name]</div>
+<div>&nbsp;</div><hr />
+<p style="text-align: center;"><img alt="TestLink logo" title="configure using $tlCfg->document_generator->company_logo"  width= height= src="https://www.scs.ubbcluj.ro/testlink/gui/themes/default/images/tl-logo-transparent-25.png" /></p></div>
+<div class="doc_title"><p>Test Specification</p></div>
+<div class="doc_title" style="text-align:left;margin: auto;"><p>Test Project: Proiect234<br/>Test Suite: Proiect234 - miir3562_IntT</p></div>
+<div class="summary"><p id="printedby">Printed by TestLink on 09/05/2026</p></div>
+<div class="pagefooter" id="copyright">2012 &copy; TestLink Community</div>
+<h1 class="general" style="page-break-before: always">Table Of Contents</h1><div class="toc"><p style="padding-left: 20px;"><b><a href="#toc_1">1.miir3562_IntT</a></b></p>
+<p style="padding-left: 45px;"><a href="#toc_tc30785">P234-68: TC01_StocService_Unitary_Success</a></p><p style="padding-left: 45px;"><a href="#toc_tc30787">P234-69: TC02_StocService_Unitary_ValidationFail</a></p><p style="padding-left: 45px;"><a href="#toc_tc30789">P234-70: TC03_StocService_IntegrationV_Success</a></p><p style="padding-left: 45px;"><a href="#toc_tc30791">P234-71: TC04_StocService_IntegrationV_Fail</a></p><p style="padding-left: 45px;"><a href="#toc_tc30793">P234-72: TC05_StocService_IntegrationR_Success</a></p><p style="padding-left: 45px;"><a href="#toc_tc30795">P234-73: TC06_StocService_IntegrationR_Fail</a></p><p style="padding-left: 45px;"><a href="#toc_tc30797">P234-74: TC07_StocService_IntegrationE_Success</a></p><p style="padding-left: 45px;"><a href="#toc_tc30799">P234-75: TC08_StocService_IntegrationE_Fail</a></p></div><h1 class="doclevel" >Scope</h1>
+<div class="txtlevel"><p>Proiect de testare pentru studentii din grupa 234.</p></div>
+ <br/><a name='toc_1'></a>
+<h1 class='doclevel'>1.Test Suite : miir3562_IntT</h1>
+<div><p>Se testează cele 4 cazuri de testare Mockito.</p>
+</div><a name="toc_tc30785"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case P234-68: TC01_StocService_Unitary_Success&nbsp;<span style="font-size: 80%;">[Version  : 1]</span></th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="3">vvir3656</td></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><p>Testarea unitară a metodei&nbsp;add&nbsp;din&nbsp;StocService. Se verifică dacă fluxul de execuție este corect atunci c&acirc;nd datele sunt valide: se apelează validarea și apoi salvarea &icirc;n repository. Toate componentele externe (Validator, Repository, Entitate) sunt mock-uite.</p>
+</td></tr><tr><td colspan="4"><span class="label">Preconditions:</span><br /><ul>
+	<li>Componenta&nbsp;StocService&nbsp;este injectată cu mock-uri pentru&nbsp;Validator&nbsp;și&nbsp;Repository.</li>
+	<li>Mock-ul pentru&nbsp;Repository&nbsp;este configurat să returneze obiectul primit la salvare.</li>
+</ul>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Automated</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Importance:</span></td><td colspan="3">Medium</td></tr>
+<tr><td colspan="4"></td></tr><tr><td > name of the autotest class:</td><td  colspan = "3" >drinkshop.service.StocServiceTest</td></tr>
+<tr><td > name of the test method:</td><td  colspan = "3" >drinkshop.service.StocServiceTest#testAddStoc_Success</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="3">miir3562_F01:  AdaugareProdus [Version : 1]<br />miir3562 _F02:  CautareProdus [Version : 1]<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span></td><td colspan="3">&nbsp;None<br/></td></tr>
+</table>
+</div>
+<a name="toc_tc30787"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case P234-69: TC02_StocService_Unitary_ValidationFail&nbsp;<span style="font-size: 80%;">[Version  : 1]</span></th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="3">vvir3656</td></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><p>Testarea unitară a gestionării erorilor &icirc;n&nbsp;StocService. Se verifică dacă, &icirc;n cazul &icirc;n care&nbsp;Validatorul&nbsp;aruncă o excepție, aceasta este propagată corect și metoda de salvare din&nbsp;Repository&nbsp;<strong>nu</strong>&nbsp;mai este apelată.</p>
+</td></tr><tr><td colspan="4"><span class="label">Preconditions:</span><br /><ul>
+	<li>Componenta&nbsp;StocService&nbsp;este configurată cu mock-uri.</li>
+	<li>Mock-ul&nbsp;stocValidator&nbsp;este programat să arunce&nbsp;ValidationException&nbsp;la apelul metodei&nbsp;validate.</li>
+</ul>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Automated</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Importance:</span></td><td colspan="3">Medium</td></tr>
+<tr><td colspan="4"></td></tr><tr><td > name of the autotest class:</td><td  colspan = "3" >drinkshop.service.StocServiceTest</td></tr>
+<tr><td > name of the test method:</td><td  colspan = "3" >drinkshop.service.StocServiceTest#testAddStoc_ValidationFails</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="3">miir3562_F01:  AdaugareProdus [Version : 1]<br />miir3562 _F02:  CautareProdus [Version : 1]<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span></td><td colspan="3">&nbsp;None<br/></td></tr>
+</table>
+</div>
+<a name="toc_tc30789"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case P234-70: TC03_StocService_IntegrationV_Success&nbsp;<span style="font-size: 80%;">[Version  : 1]</span></th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="3">vvir3656</td></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><p>Testarea integrării dintre&nbsp;StocService&nbsp;(S) și&nbsp;StocValidator&nbsp;(V). Se verifică dacă un obiect valid trece de validatorul real și ajunge să fie trimis către repository (care este Mock).</p>
+</td></tr><tr><td colspan="4"><span class="label">Preconditions:</span><br /><ul>
+	<li>StocService&nbsp;este instanțiat folosind un validator real.</li>
+	<li>StocRepository&nbsp;este configurat ca obiect de tip Mock.</li>
+	<li>Obiectul&nbsp;Stoc&nbsp;(Mock) este configurat să returneze valori valide (ID &gt; 0, Nume != null, Cantitate &gt; StocMinim).</li>
+</ul>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Automated</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Importance:</span></td><td colspan="3">Medium</td></tr>
+<tr><td colspan="4"></td></tr><tr><td > name of the autotest class:</td><td  colspan = "3" >drinkshop.service.StocServiceStep2VTest</td></tr>
+<tr><td > name of the test method:</td><td  colspan = "3" >drinkshop.service.StocServiceStep2VTest#testAddStoc_IntegrationV_Success</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="3">miir3562_F01:  AdaugareProdus [Version : 1]<br />miir3562 _F02:  CautareProdus [Version : 1]<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span></td><td colspan="3">&nbsp;None<br/></td></tr>
+</table>
+</div>
+<a name="toc_tc30791"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case P234-71: TC04_StocService_IntegrationV_Fail&nbsp;<span style="font-size: 80%;">[Version  : 1]</span></th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="3">vvir3656</td></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><p>Verificarea integrării dintre&nbsp;StocService&nbsp;și&nbsp;StocValidator&nbsp;&icirc;n cazul unui scenariu negativ. Testul confirmă că validatorul real detectează datele invalide și oprește execuția &icirc;nainte ca repository-ul să fie apelat.</p>
+</td></tr><tr><td colspan="4"><span class="label">Preconditions:</span><br /><ul>
+	<li>StocService&nbsp;utilizează instanța reală a&nbsp;StocValidator.</li>
+	<li>StocRepository&nbsp;este Mock.</li>
+	<li>Obiectul&nbsp;Stoc&nbsp;este configurat să returneze un ID invalid (ex: -1) pentru a declanșa logica de validare reală.</li>
+</ul>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Automated</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Importance:</span></td><td colspan="3">Medium</td></tr>
+<tr><td colspan="4"></td></tr><tr><td > name of the autotest class:</td><td  colspan = "3" >drinkshop.service.StocServiceStep2VTest</td></tr>
+<tr><td > name of the test method:</td><td  colspan = "3" >drinkshop.service.StocServiceStep2VTest#testAddStoc_IntegrationV_Fail</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="3">miir3562_F01:  AdaugareProdus [Version : 1]<br />miir3562 _F02:  CautareProdus [Version : 1]<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span></td><td colspan="3">&nbsp;None<br/></td></tr>
+</table>
+</div>
+<a name="toc_tc30793"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case P234-72: TC05_StocService_IntegrationR_Success&nbsp;<span style="font-size: 80%;">[Version  : 1]</span></th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="3">vvir3656</td></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><ul>
+	<li>Testarea integrării dintre&nbsp;StocService&nbsp;(S),&nbsp;StocValidator&nbsp;(V) și&nbsp;FileStocRepository&nbsp;(R). Se verifică dacă un flux complet de adăugare funcționează corect, rezult&acirc;nd &icirc;n persistarea datelor &icirc;n fișierul CSV de test.</li>
+</ul>
+</td></tr><tr><td colspan="4"><span class="label">Preconditions:</span><br /><ul>
+	<li>StocService&nbsp;este instanțiat cu validator real și repository real.</li>
+	<li>Fișierul de test&nbsp;test_stoc_integration.csv&nbsp;este creat și gol &icirc;nainte de execuție.</li>
+	<li>Obiectul&nbsp;Stoc&nbsp;(Mock) returnează date valide care respectă regulile de validare și structura de fișier.</li>
+</ul>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Automated</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Importance:</span></td><td colspan="3">Medium</td></tr>
+<tr><td colspan="4"></td></tr><tr><td > name of the autotest class:</td><td  colspan = "3" >drinkshop.service.StocServiceStep3RTest</td></tr>
+<tr><td > name of the test method:</td><td  colspan = "3" >drinkshop.service.StocServiceStep3RTest#testAddStoc_IntegrationR_Success</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="3">miir3562_F01:  AdaugareProdus [Version : 1]<br />miir3562 _F02:  CautareProdus [Version : 1]<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span></td><td colspan="3">&nbsp;None<br/></td></tr>
+</table>
+</div>
+<a name="toc_tc30795"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case P234-73: TC06_StocService_IntegrationR_Fail&nbsp;<span style="font-size: 80%;">[Version  : 1]</span></th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="3">vvir3656</td></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><p>Verificarea integrității datelor &icirc;n procesul de integrare S+V+R. Testul confirmă că, &icirc;n cazul unor date invalide prinse de&nbsp;StocValidator,&nbsp;FileStocRepository&nbsp;nu execută nicio operație de scriere/salvare.</p>
+</td></tr><tr><td colspan="4"><span class="label">Preconditions:</span><br /><ul>
+	<li>Sistemul este configurat cu componentele reale S, V și R.</li>
+	<li>Obiectul&nbsp;Stoc&nbsp;(Mock) este configurat cu un ID invalid (ex: -1).</li>
+</ul>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Automated</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Importance:</span></td><td colspan="3">Medium</td></tr>
+<tr><td colspan="4"></td></tr><tr><td > name of the autotest class:</td><td  colspan = "3" >drinkshop.service.StocServiceStep3RTest</td></tr>
+<tr><td > name of the test method:</td><td  colspan = "3" >drinkshop.service.StocServiceStep3RTest#testAddStoc_IntegrationR_Fail</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="3">miir3562_F01:  AdaugareProdus [Version : 1]<br />miir3562 _F02:  CautareProdus [Version : 1]<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span></td><td colspan="3">&nbsp;None<br/></td></tr>
+</table>
+</div>
+<a name="toc_tc30797"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case P234-74: TC07_StocService_IntegrationE_Success&nbsp;<span style="font-size: 80%;">[Version  : 1]</span></th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="3">vvir3656</td></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><p>Verificarea finală a fluxului de adăugare stoc utiliz&acirc;nd toate componentele reale: Service, Validator, Repository și Entitatea Stoc. Se confirmă că obiectul real este validat corect și persistat integral &icirc;n fișierul CSV.</p>
+</td></tr><tr><td colspan="4"><span class="label">Preconditions:</span><br /><ul>
+	<li>Toate componentele (S, V, R) sunt instanțe reale.</li>
+	<li>Nu se utilizează obiecte de tip Mock (Mockito).</li>
+	<li>Se instanțiază un obiect&nbsp;Stoc&nbsp;real cu atribute valide.</li>
+	<li>Fișierul&nbsp;test_stoc_integration_final.csv&nbsp;este pregătit pentru scriere.</li>
+</ul>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Automated</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Importance:</span></td><td colspan="3">Medium</td></tr>
+<tr><td colspan="4"></td></tr><tr><td > name of the autotest class:</td><td  colspan = "3" >drinkshop.service.StocServiceStep4ETest</td></tr>
+<tr><td > name of the test method:</td><td  colspan = "3" >drinkshop.service.StocServiceStep4ETest#testAddStoc_IntegrationE_Success</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="3">miir3562_F01:  AdaugareProdus [Version : 1]<br />miir3562 _F02:  CautareProdus [Version : 1]<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span></td><td colspan="3">&nbsp;None<br/></td></tr>
+</table>
+</div>
+<a name="toc_tc30799"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case P234-75: TC08_StocService_IntegrationE_Fail&nbsp;<span style="font-size: 80%;">[Version  : 1]</span></th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="3">vvir3656</td></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><p>Testarea comportamentului sistemului complet atunci c&acirc;nd se &icirc;ncearcă procesarea unei entități&nbsp;Stoc&nbsp;reale care conține date invalide. Se verifică propagarea excepției de la nivelul entității/validatorului p&acirc;nă la utilizator și integritatea fișierului de date.</p>
+</td></tr><tr><td colspan="4"><span class="label">Preconditions:</span><br /><ul>
+	<li>Sistemul este configurat 100% cu componente reale.</li>
+	<li>Se creează un obiect&nbsp;Stoc&nbsp;real cu date care &icirc;ncalcă regulile de business (ex: ID negativ).</li>
+</ul>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Automated</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Importance:</span></td><td colspan="3">Medium</td></tr>
+<tr><td colspan="4"></td></tr><tr><td > name of the autotest class:</td><td  colspan = "3" >drinkshop.service.StocServiceStep4ETest</td></tr>
+<tr><td > name of the test method:</td><td  colspan = "3" >drinkshop.service.StocServiceStep4ETest#testAddStoc_IntegrationE_Fail</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="3">miir3562_F01:  AdaugareProdus [Version : 1]<br />miir3562 _F02:  CautareProdus [Version : 1]<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span></td><td colspan="3">&nbsp;None<br/></td></tr>
+</table>
+</div>
+
+</body>
+</html>
